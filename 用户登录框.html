@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>云音乐登录框</title>
+<style type="text/css">
+*{margin: 0; padding: 0;}
+.form_icon{background: url(icons.png) no-repeat;background-position:-10px -90px;width:15px;height:15px;}
+.mask{
+width: 100%;
+height: 600px;
+background-color: #dedede;
+opacity: 0.75;
+filter:alpha(opacity=75);
+z-index: 1;
+}
+form{
+background-color: #fff;
+z-index: 10;
+width: 345px;
+height: 260px;
+border: 1px solid #000;
+position: absolute;
+left: 0;
+right: 0;
+top: 0;
+bottom: 0;
+margin: auto;
+font-family: "微软雅黑";
+}
+form legend{
+width: 100%;
+background-color: #000;
+color: #fff;
+font-size: 20px;
+font-weight: bold;
+height: 40px;
+line-height: 40px;
+text-indent: 10px;
+}
+form legend i{
+background-color: #fff;
+float: right;
+margin: 15px 10px 0 0;
+cursor: pointer;
+}
+form fieldset{
+width: 280px;
+margin: 30px auto;
+border: none;
+}
+form fieldset input{
+height: 30px;
+}
+form label{
+width: 30%;
+height: 20px;
+}
+form input{
+width: 70%;
+height: 20px;
+}
+form button{
+width: 100%;
+height: 40px;
+line-height: 40px;
+background-color: blue;
+font-size: 18px;
+color: #fff;
+font-weight: bold;
+text-align: center;
+border: none;
+cursor: pointer;
+}
+form div span{
+display: block;
+width: 100%;
+height: 30px;
+color: red;
+line-height: 30px;
+font-size: 14px;
+}
+</style>
+</head>
+<body>
+   <div class="mask"></div>
+	<form id="loginForm" action="/login">
+		<legend>手机号码登录<i class="form_icon" id="form_close"></i></legend>
+		<fieldset>
+			<div>
+				<label for="mobile">手机号：</label>
+				<input id="mobile" name="mobile" type="text">
+				<span id="user_info"></span>
+			</div>
+			<div>
+				<label for="password">密　码：</label>
+				<input id="password" type="password" name="password">
+				<span id="pass_info"></span>
+			</div>
+			<div><button id="login">登　录</button></div>
+		</fieldset>
+	</form>
+
+<script type="text/javascript">
+	window.onload = function(){
+         var user = document.getElementById('mobile');
+         var pass = document.getElementById('password');
+         var user_info = document.getElementById('user_info');
+         var pass_info = document.getElementById('pass_info');
+         user.onblur = function(){
+         	var userTxt = user.value;
+         	if(userTxt ==""){
+         		user_info.innerHTML = "用户名不能为空！";
+         		return false;
+         	}
+         	if(userTxt!="" && userTxt.length<6){
+         		user_info.innerHTML = "用户名不能小于六个字符！";
+         		return false;
+         	}
+            if(userTxt!="" && userTxt.length>15){
+         		user_info.innerHTML = "用户名不能多于十二字符！";
+         		return false;
+         	}
+         	if(userTxt!="" && userTxt.length>=6 && userTxt.length<=15){
+         		user_info.innerHTML = "验证通过！";
+         		return false;
+            };
+	};
+	     pass.onblur = function(){
+         	var passTxt = pass.value;
+         	if(passTxt ==""){
+         		pass_info.innerHTML = "密码不能为空！";
+         		return false;
+         	}
+         	if(passTxt!="" && passTxt.length<6){
+         		pass_info.innerHTML = "密码不能小于六个字符！";
+         		return false;
+         	}
+            if(passTxt!="" && passTxt.length>15){
+         		pass_info.innerHTML = "密码不能多于十二字符！";
+         		return false;
+         	}
+         	if(passTxt!="" && passTxt.length>=6 && passTxt.length<=15){
+         		pass_info.innerHTML = "验证通过！";
+         		return false;
+            };
+	};
+}
+</script>
+</body>
+</html>
