@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>分页器</title>
+</head>
+<style type="text/css">
+.page-normal a{
+	text-decoration: none;
+	border: 1px solid #ff6500;
+	padding: 5px 8px;
+	color: #ff6500;
+	margin-left: 5px;
+}
+.page-normal a:hover{
+	background-color: #ffbe94;
+}
+.page-normal{
+	color: #ff6500;
+	text-align: center;
+}
+.page-normal .page-current{
+    border: 1px solid #ff6500;
+    padding: 5px 8px;
+    color: #ff6500;
+    background-color: #ffbe94;
+}
+.page-normal .pare-pre{
+	border: 1px solid #ffe3c6;
+	color: #ffe3c6;
+	padding: 5px 8px;
+}
+</style>
+<body>
+	<div class="page-normal">
+		<span class="pare-pre">上一页</span>
+		<span class="page-current">1</span>
+		<a href="#">2</a>
+		<a href="#">3</a>
+		<a href="#">4</a>
+		<a href="#">5</a>
+		<a href="#">6</a>
+		<a href="#">7</a>
+		<a href="#">8</a>
+		...
+		<a href="#">199</a>
+		<a href="#">200</a>
+		<a href="#">下一页</a>
+	</div>
+</body>
+</html>
