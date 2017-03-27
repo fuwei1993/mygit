@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>纯CSS图片放大效果</title>
+<style type="text/css" title=""> 
+        div{width: 800px;height: 400px;position: relative;margin: 40px auto;}
+        div img{float: left; width:32.5%;height: 49%;position:absolute;margin:}
+        /*使用绝对定位让图片固定从而脱离页面流*/ 
+        div img:hover{position: absolute;z-index:10;transform: scale(1.4, 1.4);transition: .4s transform;} 
+        .card-1{top:0;left:0;} 
+        .card-2{top:0;left:33%;} 
+        .card-3{top:0;left:66%;} 
+        .card-4{top:50%;left:0;} 
+        .card-5{top:50%;left:33%;} 
+        .card-6{top:50%;left:66%;} 
+        /*定位图片的排布*/ 
+</style> 
+</head> 
+<body>
+  <div>
+      <img src="card-1.jpg" class="card-1">
+      <img src="card-2.jpg" class="card-2">
+      <img src="card-3.jpg" class="card-3">
+      <img src="card-4.jpg" class="card-4">
+      <img src="card-5.jpg" class="card-5">
+      <img src="card-6.jpg" class="card-6">
+  </div> 
+</body> 
+</html>
